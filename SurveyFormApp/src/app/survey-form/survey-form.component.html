@@ -1,0 +1,191 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<div class="form-group row">
+    <label for="header" class="col-sm-2 col-form-label col-form-label-lg">Recuirment Survey</label>
+</div>
+    
+   <div class="form-group row">
+        <label for="FirstName" class="col-sm-2 col-form-label col-form-label">First Name: </label>
+        <div class="col-sm-2">
+        <input required ngModel name="FirstName" #FirstName="ngModel"  (change)="log(FirstName)" id="FirstName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="FirstName.touched && !FirstName.valid ">First Name is required.</div>
+    </div>
+        </div>
+        <div class="form-group row">
+            <label for="LastName" class="col-sm-2 col-form-label col-form-label">Last Name: </label>
+            <div class="col-sm-2">
+                <input required ngModel name="LastName" #LastName="ngModel" (change)="log(LastName)"id="LastName" type="text" class="form-control">
+                <div class="alert alert-danger" *ngIf="LastName.touched && !LastName.valid ">Last Name is required.</div>
+            </div>
+
+        </div>
+       <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label col-form-label">Email: </label>
+        <div class="col-sm-2">
+            <input  required ngModel name="email" #email="ngModel" (change)="log(email)" id="email" type="email" class="form-control">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid ">Email is required.</div>
+        </div>
+       </div>
+        
+        <div class="form-group row">
+            <label for="phone" class="col-sm-2 col-form-label col-form-label">Phone Number: </label>
+            <div class="col-sm-2">
+                <input required ngModel name="phone" #phone="ngModel" (change)="log(phone)" id="phone" type="number" class="form-control">
+                <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid ">Phone Number is required.</div>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="Dob" class="col-sm-2 col-form-label col-form-label">Date of Birth: </label>
+            <div class="col-sm-2">
+                <input required ngModel name="Dob" #Dob="ngModel" (change)="log(Dob)" id="Dob" type="date" class="form-control">
+                <div class="alert alert-danger" *ngIf="Dob.touched && !Dob.valid ">Date of Birth is required.</div>
+            </div>
+        </div>
+       
+        <div class="form-group row">
+        <label for="degree" class="col-sm-2 col-form-label col-form-label">Degree:</label>
+        <div class="col-sm-2">
+            <select id="degree" name="degree" size="1" class="form-control">
+                <option value="bachelor">Bachelor’s Degree</option>
+                <option value="master">Master’s Degree</option>
+                <option value="doctor">Doctoral Degree</option>
+                <option value="highSchool">High School</option> 
+                </select>
+        </div>
+         </div>
+      <div class="form-group row">
+         <label for="major" class="col-sm-2 col-form-label col-form-label">Major:</label>
+            <div class="form-check form-check-inline">
+                <input  class="form-check-input" type="radio" name="major" id="medical" value="Medical & Life Sciences">
+                <label  class="form-check-label" for="medical">Medical & Life Sciences</label>
+             </div>
+            
+            <div class="form-check form-check-inline">
+                <input  class="form-check-input" type="radio" name="major" id="visualarts" value="Visual & Performance Arts"> 
+                <label class="form-check-label" for="visualarts">Visual & Performance Arts</label>
+            </div>
+    
+            
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="major" id="arts" value="Liberal Arts"  >
+                <label class="form-check-label" for="arts" >Liberal Arts</label>
+            </div>
+           
+            <div class="form-check form-check-inline">
+                <input  class="form-check-input" type="radio" name="major" id="tech" value="Engineering & Technology"  >
+                <label class="form-check-label" for="tech">Engineering & Technology</label>
+            </div>
+           
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="major" id="business" value="Business"  >
+                <label class="form-check-label" for="business">Business</label>
+            </div>
+      </div>
+      <div class="form-group row">
+        <label for="majorspecific" class="col-sm-2 col-form-label col-form-label">Field:</label>
+        <div class="col-sm-2">
+            <input required ngModel name="majorspecific" #majorspecific="ngModel" (change)="log(majorspecific)" id="Dob" type="text" id="majorspecific" class="form-control" placeholder="Ex:Computer Science">
+            <div class="alert alert-danger" *ngIf="majorspecific.touched && !majorspecific.valid ">Field is required.</div>
+        </div>
+     </div>
+     <label for="test"  class="col-sm-6 col-form-label col-form-label-lg">Please provide us an honest answers for the following questions:</label>
+     <div class="form-group row">
+         
+            <label class="form-check-label" for="Q1" class="col-sm-2 col-form-label col-form-label-label" >Years of experience:</label>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="radio" name="oneYear" id="Q1" value=" 1 Year or less">
+         <label class="form-check-label" for="Q1">1 Year or less</label>
+        </div>
+         <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="oneYear" id="Q1" value=" 5 Years">
+            <label class="form-check-label" for="Q1">5 years</label><br>
+         </div>
+         <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="oneYear" id="Q1" value="10 Year or more">
+            <label class="form-check-label" for="Q1">10 years or more</label>  
+         </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-check-label" for="Q2" class="col-sm-2 col-form-label col-form-label-label">I am very Competitve</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q2" value="Strongly Agree">
+                <label class="form-check-label" for="Q2">Strongly Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="agree" id="Q2" value=" Agree">
+                <label class="form-check-label" for="Q2">Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="neutral" id="Q2" value="Nuetral">
+                <label class="form-check-label" for="Q2">Nuetral</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q2" value="Strongly Disagree">
+                <label class="form-check-label" for="Q2">Strongly Disagree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q2" value="Disagree">
+                <label class="form-check-label" for="Q2">Disagree</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-check-label" for="Q3" class="col-sm-2 col-form-label col-form-label-label">I prefer work with team to work individually</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q3" value="Strongly Agree">
+                <label class="form-check-label" for="Q3">Strongly Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="agree" id="Q3" value=" Agree">
+                <label class="form-check-label" for="Q3">Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="neutral" id="Q3" value="Nuetral">
+                <label class="form-check-label" for="Q3">Nuetral</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q3" value="Strongly Disagree">
+                <label class="form-check-label" for="Q3">Strongly Disagree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q3" value="Disagree">
+                <label class="form-check-label" for="Q3">Disagree</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="form-check-label" for="Q4" class="col-sm-2 col-form-label col-form-label-label">I am more creative than analytical</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q4" value="Strongly Agree">
+                <label class="form-check-label" for="Q4">Strongly Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="agree" id="Q4" value=" Agree">
+                <label class="form-check-label" for="Q4">Agree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="neutral" id="Q4" value="Nuetral">
+                <label class="form-check-label" for="Q4">Nuetral</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q4" value="Strongly Disagree">
+                <label class="form-check-label" for="Q4">Strongly Disagree</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="strong" id="Q4" value="Disagree">
+                <label class="form-check-label" for="Q4">Disagree</label>
+            </div>
+        </div>
+        <label for="summaryBio" class="col-sm-6 col-form-label col-form-label-lg">Summary: </label>
+    <div class="form-group row">
+        <div class="col-sm-5">
+            <textarea required ngModel name="summaryBio" #summaryBio="ngModel" (change)="log(summaryBio)" id="summaryBio"  class="form-control" placeholder="Ex: certifications,experience,future plans"></textarea>
+            <div class="alert alert-danger" *ngIf="summaryBio.touched && !summaryBio.valid ">Summary is required.</div> 
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="file" class="col-sm-6 col-form-label col-form-label-lg">Here you may share files:</label>
+            <input type="file" class="form-control-file" id="file">
+     <button class="btn btn-primary">Apply</button>
+
